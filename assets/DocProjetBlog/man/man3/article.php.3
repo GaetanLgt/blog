@@ -1,0 +1,44 @@
+.TH "article.php" 3 "Fri Jun 26 2020" "Version 1.1" "<Le blog des stars/>" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+article.php
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB$categories\fP = \fBgetCategories\fP()"
+.br
+.ti -1c
+.RI "\fB$title\fP = 'article'"
+.br
+.ti -1c
+.RI "if(isset($_POST['username']) &&isset($_POST['password'])) \fBif\fP (isset( $_SESSION) &&empty( $_SESSION[ 'id']))"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "$categories = \fBgetCategories\fP()"
+
+.PP
+Definition at line 4 of file article\&.php\&.
+.SS "$title = 'article'"
+
+.PP
+Definition at line 6 of file article\&.php\&.
+.SS "if (isset( $_POST[ 'username']) &&isset( $_POST[ 'password'])) if(isset($_SESSION) &&empty($_SESSION['id']))"
+Si on a un mot de passe et un nom d'utilisateur
+.PP
+on vérifie le mot de passe entré avec celui-ci stocké en BDD
+.PP
+Si c'est la correpsondance est bonne connexion et message
+.PP
+Sinon on renvoi sur le login N'autorise pas l'accès a la page si l'utilisateur n'est pas identifié 
+.PP
+Definition at line 37 of file article\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for <Le blog des stars/> from the source code\&.

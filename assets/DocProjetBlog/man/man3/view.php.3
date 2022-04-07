@@ -1,0 +1,58 @@
+.TH "view.php" 3 "Fri Jun 26 2020" "Version 1.1" "<Le blog des stars/>" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+view.php
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBif\fP(isset($_GET['id'])&&!empty($_GET['id'])) \fB$date\fP = $article['created_at']"
+.br
+.ti -1c
+.RI "\fB$imageUrl\fP =$article['image']"
+.br
+.ti -1c
+.RI "\fB$largeur\fP = 300"
+.br
+.ti -1c
+.RI "\fB$imageDim\fP = \fBresizeImage\fP($largeur,$article['image'])"
+.br
+.ti -1c
+.RI "\fBif\fP(!empty($imageDim)) \fBif\fP(isset($_GET['com']) && $_GET['com']=='new') \fB$title\fP = substr($article['titre'], 0 , 27)\&.'\&.\&.\&.'"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "\fBif\fP (isset( $_GET[ 'id'])&&!empty( $_GET[ 'id'])) $date = $article['created_at']"
+Si on a un Id d'article
+.PP
+On récupère le contenu de l'article et le commentaires associés
+.PP
+Et on calcule l'image redimmensionnée 
+.PP
+Definition at line 17 of file view\&.php\&.
+.SS "$imageDim = \fBresizeImage\fP($largeur,$article['image'])"
+
+.PP
+Definition at line 21 of file view\&.php\&.
+.SS "$imageUrl =$article['image']"
+
+.PP
+Definition at line 19 of file view\&.php\&.
+.SS "$largeur = 300"
+
+.PP
+Definition at line 20 of file view\&.php\&.
+.SS "\fBif\fP (!empty( $imageDim)) \fBif\fP (isset( $_GET[ 'com']) &&$_GET[ 'com']=='new') $title = substr($article['titre'], 0 , 27)\&.'\&.\&.\&.'"
+Si on a un nouveau commentaire d'envoyé
+.PP
+Il est ajouté a la base et l'utilisateur est redirigé sur la même page substr — Retourne un segment de chaîne 
+.PP
+Definition at line 39 of file view\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for <Le blog des stars/> from the source code\&.

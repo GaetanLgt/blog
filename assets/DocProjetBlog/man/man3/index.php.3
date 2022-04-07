@@ -1,0 +1,87 @@
+.TH "index.php" 3 "Fri Jun 26 2020" "Version 1.1" "<Le blog des stars/>" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+index.php
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB$articles\fP = \fBgetTtArticles\fP()"
+.br
+.ti -1c
+.RI "\fB$nbArticles\fP = \fBgetNbArticles\fP()"
+.br
+.ti -1c
+.RI "\fB$articlesParPages\fP = 10"
+.br
+.ti -1c
+.RI "\fB$nbPages\fP = ceil($nbArticles['nbArticles']/$articlesParPages)"
+.br
+.ti -1c
+.RI "\fBif\fP(isset($_GET['page']) &&!empty($_GET['page'])) \fBelse\fP"
+.br
+.ti -1c
+.RI "\fB$auteurs\fP = \fBgetAuteur\fP()"
+.br
+.ti -1c
+.RI "\fB$categories\fP = \fBgetCategories\fP()"
+.br
+.ti -1c
+.RI "\fB$title\fP = '<Le blog des stars/>'"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "$articles = \fBgetTtArticles\fP()"
+
+.PP
+Definition at line 4 of file index\&.php\&.
+.SS "$articlesParPages = 10"
+
+.PP
+Definition at line 7 of file index\&.php\&.
+.SS "$auteurs = \fBgetAuteur\fP()"
+
+.PP
+Definition at line 33 of file index\&.php\&.
+.SS "$categories = \fBgetCategories\fP()"
+
+.PP
+Definition at line 34 of file index\&.php\&.
+.SS "$nbArticles = \fBgetNbArticles\fP()"
+
+.PP
+Definition at line 5 of file index\&.php\&.
+.SS "$nbPages = ceil($nbArticles['nbArticles']/$articlesParPages)"
+Pour avoir le nombre de pages
+.PP
+ceil — Arrondit au nombre supérieur 
+.PP
+Definition at line 14 of file index\&.php\&.
+.SS "$title = '<Le blog des stars/>'"
+
+.PP
+Definition at line 36 of file index\&.php\&.
+.SS "\fBif\fP (isset( $_GET['page']) &&!empty( $_GET['page'])) else"
+\fBInitial value:\fP
+.PP
+.nf
+{
+  $articles = getArticles()
+.fi
+Si on a un N° de page
+.PP
+calcule l'offset (nombre d'article non affichés) et retourne les $articlesParPages demandés
+.PP
+sinon
+.PP
+getarticles() prend les valeurs de base mises dans \fBmodel\&.php\fP par défaut 
+.PP
+Definition at line 29 of file index\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for <Le blog des stars/> from the source code\&.

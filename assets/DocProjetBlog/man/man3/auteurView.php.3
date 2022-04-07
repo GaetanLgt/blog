@@ -1,0 +1,31 @@
+.TH "assets/view/auteurView.php" 3 "Fri Jun 26 2020" "Version 1.1" "<Le blog des stars/>" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+assets/view/auteurView.php
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBif\fP(!isset($articles[0]['nom'])) \fBelse\fP"
+.br
+.ti -1c
+.RI "\fBforeach\fP ( $articles as $article) = strftime('%A %d %B %Y, %H:%M',strtotime($article['created_at']))"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "\fBif\fP (!isset( $articles[0]['nom'])) else"
+
+.PP
+Definition at line 7 of file auteurView\&.php\&.
+.SS "foreach($articles as $article) = strftime('%A %d %B %Y, %H:%M',strtotime($article['created_at']))"
+
+.PP
+Definition at line 11 of file auteurView\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for <Le blog des stars/> from the source code\&.

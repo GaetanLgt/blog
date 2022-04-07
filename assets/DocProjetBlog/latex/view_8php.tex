@@ -1,0 +1,74 @@
+\doxysection{view.\+php File Reference}
+\label{view_8php}\index{view.php@{view.php}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ if}(isset(\$\+\_\+\+G\+ET[\textquotesingle{}id\textquotesingle{}])\&\&!empty(\$\+\_\+\+G\+ET[\textquotesingle{}id\textquotesingle{}])) \textbf{ \$date} = \$article[\textquotesingle{}created\+\_\+at\textquotesingle{}]
+\item 
+\textbf{ \$image\+Url} =\$article[\textquotesingle{}image\textquotesingle{}]
+\item 
+\textbf{ \$largeur} = 300
+\item 
+\textbf{ \$image\+Dim} = \textbf{ resize\+Image}(\$largeur,\$article[\textquotesingle{}image\textquotesingle{}])
+\item 
+\textbf{ if}(!empty(\$image\+Dim)) \textbf{ if}(isset(\$\+\_\+\+G\+ET[\textquotesingle{}com\textquotesingle{}]) \&\& \$\+\_\+\+G\+ET[\textquotesingle{}com\textquotesingle{}]==\char`\"{}new\char`\"{}) \textbf{ \$title} = substr(\$article[\textquotesingle{}titre\textquotesingle{}], 0 , 27).\char`\"{}...\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\label{view_8php_a02280c5d67d86534372014d1cee749ee}} 
+\index{view.php@{view.php}!\$date@{\$date}}
+\index{\$date@{\$date}!view.php@{view.php}}
+\doxysubsubsection{\$date}
+{\footnotesize\ttfamily \textbf{ if} (isset( \$\+\_\+\+G\+ET[ \textquotesingle{}id\textquotesingle{}])\&\&!empty( \$\+\_\+\+G\+ET[ \textquotesingle{}id\textquotesingle{}])) \$date = \$article[\textquotesingle{}created\+\_\+at\textquotesingle{}]}
+
+Si on a un Id d\textquotesingle{}article
+
+On récupère le contenu de l\textquotesingle{}article et le commentaires associés
+
+Et on calcule l\textquotesingle{}image redimmensionnée 
+
+Definition at line 17 of file view.\+php.
+
+\mbox{\label{view_8php_a6ba83587dda60b979ec76813494e85ae}} 
+\index{view.php@{view.php}!\$imageDim@{\$imageDim}}
+\index{\$imageDim@{\$imageDim}!view.php@{view.php}}
+\doxysubsubsection{\$imageDim}
+{\footnotesize\ttfamily \$image\+Dim = \textbf{ resize\+Image}(\$largeur,\$article[\textquotesingle{}image\textquotesingle{}])}
+
+
+
+Definition at line 21 of file view.\+php.
+
+\mbox{\label{view_8php_ad103df8581d12c5ecf9fc08b86497a2d}} 
+\index{view.php@{view.php}!\$imageUrl@{\$imageUrl}}
+\index{\$imageUrl@{\$imageUrl}!view.php@{view.php}}
+\doxysubsubsection{\$imageUrl}
+{\footnotesize\ttfamily \$image\+Url =\$article[\textquotesingle{}image\textquotesingle{}]}
+
+
+
+Definition at line 19 of file view.\+php.
+
+\mbox{\label{view_8php_ac2e638139d6164746ec0b58e420fcf5c}} 
+\index{view.php@{view.php}!\$largeur@{\$largeur}}
+\index{\$largeur@{\$largeur}!view.php@{view.php}}
+\doxysubsubsection{\$largeur}
+{\footnotesize\ttfamily \$largeur = 300}
+
+
+
+Definition at line 20 of file view.\+php.
+
+\mbox{\label{view_8php_a2b4c9a677b4badeaadf8953745f96b4b}} 
+\index{view.php@{view.php}!\$title@{\$title}}
+\index{\$title@{\$title}!view.php@{view.php}}
+\doxysubsubsection{\$title}
+{\footnotesize\ttfamily \textbf{ if} (!empty( \$image\+Dim)) \textbf{ if} (isset( \$\+\_\+\+G\+ET[ \textquotesingle{}com\textquotesingle{}]) \&\&\$\+\_\+\+G\+ET[ \textquotesingle{}com\textquotesingle{}]==\char`\"{}new\char`\"{}) \$title = substr(\$article[\textquotesingle{}titre\textquotesingle{}], 0 , 27).\char`\"{}...\char`\"{}}
+
+Si on a un nouveau commentaire d\textquotesingle{}envoyé
+
+Il est ajouté a la base et l\textquotesingle{}utilisateur est redirigé sur la même page substr — Retourne un segment de chaîne 
+
+Definition at line 39 of file view.\+php.
+

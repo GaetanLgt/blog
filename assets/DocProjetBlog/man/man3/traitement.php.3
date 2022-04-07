@@ -1,0 +1,31 @@
+.TH "assets/pages/traitement.php" 3 "Fri Jun 26 2020" "Version 1.1" "<Le blog des stars/>" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+assets/pages/traitement.php
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBif\fP(isset($_FILES) &&!empty($_FILES)) \fBinsertArticle\fP ()"
+.br
+.ti -1c
+.RI "\fBif\fP(isset($_POST['titre']) &&isset($_POST['slug']) &&isset($_POST['content'])) \fBinscription\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBif\fP (isset( $_POST[ 'titre']) &&isset( $_POST[ 'slug']) &&isset( $_POST[ 'content'])) inscription ()"
+Insertion d'un nouvel utilisateur en base de données requête préparée 
+.PP
+Definition at line 71 of file traitement\&.php\&.
+.SS "\fBif\fP (isset( $_FILES) &&!empty( $_FILES)) insertArticle ()"
+Set de nouvelles catégorie Insertion d'un nouvel article en base de données $_POST => boite aux lettres -> formulaire $_GET => visible -> barre d'adresse ^^ Set de nouvelles catégorie
+.PP
+Definition at line 32 of file traitement\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for <Le blog des stars/> from the source code\&.

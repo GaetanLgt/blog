@@ -1,0 +1,118 @@
+\doxysection{index.\+php File Reference}
+\label{index_8php}\index{index.php@{index.php}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \$articles} = \textbf{ get\+Tt\+Articles}()
+\item 
+\textbf{ \$nb\+Articles} = \textbf{ get\+Nb\+Articles}()
+\item 
+\textbf{ \$articles\+Par\+Pages} = 10
+\item 
+\textbf{ \$nb\+Pages} = ceil(\$nb\+Articles[\textquotesingle{}nb\+Articles\textquotesingle{}]/\$articles\+Par\+Pages)
+\item 
+\textbf{ if}(isset(\$\+\_\+\+G\+ET[\char`\"{}page\char`\"{}]) \&\&!empty(\$\+\_\+\+G\+ET[\char`\"{}page\char`\"{}])) \textbf{ else}
+\item 
+\textbf{ \$auteurs} = \textbf{ get\+Auteur}()
+\item 
+\textbf{ \$categories} = \textbf{ get\+Categories}()
+\item 
+\textbf{ \$title} = \char`\"{}$<$Le blog des stars/$>$\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\label{index_8php_a086d538fe71143a08071c194c8569f92}} 
+\index{index.php@{index.php}!\$articles@{\$articles}}
+\index{\$articles@{\$articles}!index.php@{index.php}}
+\doxysubsubsection{\$articles}
+{\footnotesize\ttfamily \$articles = \textbf{ get\+Tt\+Articles}()}
+
+
+
+Definition at line 4 of file index.\+php.
+
+\mbox{\label{index_8php_a3d7e81182aaf9dee5aa18f7920da3e94}} 
+\index{index.php@{index.php}!\$articlesParPages@{\$articlesParPages}}
+\index{\$articlesParPages@{\$articlesParPages}!index.php@{index.php}}
+\doxysubsubsection{\$articlesParPages}
+{\footnotesize\ttfamily \$articles\+Par\+Pages = 10}
+
+
+
+Definition at line 7 of file index.\+php.
+
+\mbox{\label{index_8php_a683eeda6d2b0065f87b2035d49aebf23}} 
+\index{index.php@{index.php}!\$auteurs@{\$auteurs}}
+\index{\$auteurs@{\$auteurs}!index.php@{index.php}}
+\doxysubsubsection{\$auteurs}
+{\footnotesize\ttfamily \$auteurs = \textbf{ get\+Auteur}()}
+
+
+
+Definition at line 33 of file index.\+php.
+
+\mbox{\label{index_8php_afc71bc53d6775d8a344893d5ec10f187}} 
+\index{index.php@{index.php}!\$categories@{\$categories}}
+\index{\$categories@{\$categories}!index.php@{index.php}}
+\doxysubsubsection{\$categories}
+{\footnotesize\ttfamily \$categories = \textbf{ get\+Categories}()}
+
+
+
+Definition at line 34 of file index.\+php.
+
+\mbox{\label{index_8php_a08de5314c5e5ddb8486b0ceb73b699c6}} 
+\index{index.php@{index.php}!\$nbArticles@{\$nbArticles}}
+\index{\$nbArticles@{\$nbArticles}!index.php@{index.php}}
+\doxysubsubsection{\$nbArticles}
+{\footnotesize\ttfamily \$nb\+Articles = \textbf{ get\+Nb\+Articles}()}
+
+
+
+Definition at line 5 of file index.\+php.
+
+\mbox{\label{index_8php_a50b4d6d515810b85ad846a9575dbfbac}} 
+\index{index.php@{index.php}!\$nbPages@{\$nbPages}}
+\index{\$nbPages@{\$nbPages}!index.php@{index.php}}
+\doxysubsubsection{\$nbPages}
+{\footnotesize\ttfamily \$nb\+Pages = ceil(\$nb\+Articles[\textquotesingle{}nb\+Articles\textquotesingle{}]/\$articles\+Par\+Pages)}
+
+Pour avoir le nombre de pages
+
+ceil — Arrondit au nombre supérieur 
+
+Definition at line 14 of file index.\+php.
+
+\mbox{\label{index_8php_ada57e7bb7c152edad18fe2f166188691}} 
+\index{index.php@{index.php}!\$title@{\$title}}
+\index{\$title@{\$title}!index.php@{index.php}}
+\doxysubsubsection{\$title}
+{\footnotesize\ttfamily \$title = \char`\"{}$<$Le blog des stars/$>$\char`\"{}}
+
+
+
+Definition at line 36 of file index.\+php.
+
+\mbox{\label{index_8php_affdc7dcddc030f4fb4e3d5044178d3b9}} 
+\index{index.php@{index.php}!else@{else}}
+\index{else@{else}!index.php@{index.php}}
+\doxysubsubsection{else}
+{\footnotesize\ttfamily \textbf{ if} (isset( \$\+\_\+\+G\+ET[\char`\"{}page\char`\"{}]) \&\&!empty( \$\+\_\+\+G\+ET[\char`\"{}page\char`\"{}])) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \$articles = getArticles()}
+
+\end{DoxyCode}
+Si on a un N° de page
+
+calcule l\textquotesingle{}offset (nombre d\textquotesingle{}article non affichés) et retourne les \$articles\+Par\+Pages demandés
+
+sinon
+
+getarticles() prend les valeurs de base mises dans \doxyref{model.\+php}{p.}{model_8php} par défaut 
+
+Definition at line 29 of file index.\+php.
+

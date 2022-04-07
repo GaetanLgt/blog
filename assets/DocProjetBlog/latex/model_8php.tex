@@ -1,0 +1,303 @@
+\doxysection{model.\+php File Reference}
+\label{model_8php}\index{model.php@{model.php}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ bddconnect} ()
+\item 
+\textbf{ get\+Tt\+Articles} ()
+\item 
+\textbf{ get\+Nb\+Articles} ()
+\item 
+\textbf{ get\+Articles} (\$offet=0, \$limit=10)
+\item 
+\textbf{ get\+Auteur} ()
+\item 
+\textbf{ get\+Article\+Auteur} (\$id)
+\item 
+\textbf{ get\+Article} (\$id)
+\item 
+\textbf{ insert\+Com} (\$pseudo, \$commentaire, \$article\+\_\+id)
+\item 
+\textbf{ get\+Comments} (\$article\+\_\+id)
+\item 
+\textbf{ resize\+Image} (\$width, \$chemin\+Image)
+\item 
+\textbf{ get\+Categories} ()
+\item 
+\textbf{ set\+New\+Categorie} (\$nom\+Categorie)
+\item 
+\textbf{ get\+Article\+Categorie} (\$id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{model_8php_a4df2e93c5c138d0466840822ad761ec4}} 
+\index{model.php@{model.php}!bddconnect@{bddconnect}}
+\index{bddconnect@{bddconnect}!model.php@{model.php}}
+\doxysubsubsection{bddconnect()}
+{\footnotesize\ttfamily bddconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Bdd Connexion
+
+connexion à la base my\+S\+QL
+
+mysql\+:host=nom de l\textquotesingle{}hote;dbname=nom de la base \textquotesingle{},\textquotesingle{}username\textquotesingle{}, \textquotesingle{}mdp\textquotesingle{}
+
+Retourne une erreur en cas de problème
+
+\begin{DoxyReturn}{Returns}
+\textbackslash{}\+P\+DO 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file model.\+php.
+
+\mbox{\label{model_8php_a976fc8d6c1ced6ae83d96c023839d02d}} 
+\index{model.php@{model.php}!getArticle@{getArticle}}
+\index{getArticle@{getArticle}!model.php@{model.php}}
+\doxysubsubsection{getArticle()}
+{\footnotesize\ttfamily get\+Article (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Retourne un article en fonction de l\textquotesingle{}id envoyé
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+E\+T\+C\+H\+\_\+\+A\+S\+S\+OC
+\end{DoxyReturn}
+retourne UN article 
+
+Definition at line 137 of file model.\+php.
+
+\mbox{\label{model_8php_a0be6d02561936884c48d48e2c1a1312e}} 
+\index{model.php@{model.php}!getArticleAuteur@{getArticleAuteur}}
+\index{getArticleAuteur@{getArticleAuteur}!model.php@{model.php}}
+\doxysubsubsection{getArticleAuteur()}
+{\footnotesize\ttfamily get\+Article\+Auteur (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Récupère tous les articles d\textquotesingle{}un auteur avec tri
+
+\$articles[0][\char`\"{}nom\char`\"{}] =$>$ tableau a double entrée
+
+retourne les articles si il y en a par rapport a l\textquotesingle{}id auteur
+
+sinon message pour dire qu\textquotesingle{}il n\textquotesingle{}y a rien
+
+\begin{DoxyReturn}{Returns}
+F\+E\+T\+C\+H\+\_\+\+A\+S\+S\+OC
+\end{DoxyReturn}
+retourne les articles de l\textquotesingle{}auteur 
+
+Definition at line 116 of file model.\+php.
+
+\mbox{\label{model_8php_af99dfb32c9dfccb3c0c70f68f09c7f3c}} 
+\index{model.php@{model.php}!getArticleCategorie@{getArticleCategorie}}
+\index{getArticleCategorie@{getArticleCategorie}!model.php@{model.php}}
+\doxysubsubsection{getArticleCategorie()}
+{\footnotesize\ttfamily get\+Article\+Categorie (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Renvoi les articles qui peuplent une categorie donc l\textquotesingle{}id est mis en paramètre
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+E\+T\+C\+H\+\_\+\+A\+S\+S\+OC
+\end{DoxyReturn}
+retourne les articles 
+
+Definition at line 265 of file model.\+php.
+
+\mbox{\label{model_8php_a7720de210ebe9180e71bfafdb74aee51}} 
+\index{model.php@{model.php}!getArticles@{getArticles}}
+\index{getArticles@{getArticles}!model.php@{model.php}}
+\doxysubsubsection{getArticles()}
+{\footnotesize\ttfamily get\+Articles (\begin{DoxyParamCaption}\item[{}]{\$offet = {\ttfamily 0},  }\item[{}]{\$limit = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+donne les \$limit articles après \$offet ingnorés
+
+si pas d\textquotesingle{}envoi de offset en paramètre alors \$offset = 0
+
+si pas d\textquotesingle{}envoi de lmite en paramètre alors \$limit = 10
+
+O\+R\+D\+ER BY articles.\+id D\+E\+SC tri en descendant par id
+
+L\+I\+M\+IT \$offet, \$limit =$>$ Limite les résultats à \$limit résultat et saute les \$offets premiers résultats (--Query--)
+
+\begin{DoxyReturn}{Returns}
+F\+E\+T\+C\+H\+\_\+\+A\+S\+S\+OC
+\end{DoxyReturn}
+retourne les articles 
+
+Definition at line 83 of file model.\+php.
+
+\mbox{\label{model_8php_ad9cbe4cd4561e831bf6a59bdf8571a3b}} 
+\index{model.php@{model.php}!getAuteur@{getAuteur}}
+\index{getAuteur@{getAuteur}!model.php@{model.php}}
+\doxysubsubsection{getAuteur()}
+{\footnotesize\ttfamily get\+Auteur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+récupère les informations de tous les auteurs
+
+\begin{DoxyReturn}{Returns}
+F\+E\+T\+C\+H\+\_\+\+A\+S\+S\+OC
+\end{DoxyReturn}
+retourne les auteurs 
+
+Definition at line 97 of file model.\+php.
+
+\mbox{\label{model_8php_a8729ba486702e7e12a3fff08965e1e7f}} 
+\index{model.php@{model.php}!getCategories@{getCategories}}
+\index{getCategories@{getCategories}!model.php@{model.php}}
+\doxysubsubsection{getCategories()}
+{\footnotesize\ttfamily get\+Categories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Récupère toutes les informations de notre table categories en base S\+QL
+
+\begin{DoxyReturn}{Returns}
+F\+E\+T\+C\+H\+\_\+\+A\+S\+S\+OC
+\end{DoxyReturn}
+retourne les catégories 
+
+Definition at line 215 of file model.\+php.
+
+\mbox{\label{model_8php_a31cae2c95b30fa6c034282326eb9d371}} 
+\index{model.php@{model.php}!getComments@{getComments}}
+\index{getComments@{getComments}!model.php@{model.php}}
+\doxysubsubsection{getComments()}
+{\footnotesize\ttfamily get\+Comments (\begin{DoxyParamCaption}\item[{}]{\$article\+\_\+id }\end{DoxyParamCaption})}
+
+Récupère les commentaires pour les afficher en fonction de l\textquotesingle{}id article
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$article\+\_\+id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+E\+T\+C\+H\+\_\+\+A\+S\+S\+OC
+\end{DoxyReturn}
+retourne les commentaires 
+
+Definition at line 181 of file model.\+php.
+
+\mbox{\label{model_8php_ab0cfb29a73c235f98b97b42df3d55f18}} 
+\index{model.php@{model.php}!getNbArticles@{getNbArticles}}
+\index{getNbArticles@{getNbArticles}!model.php@{model.php}}
+\doxysubsubsection{getNbArticles()}
+{\footnotesize\ttfamily get\+Nb\+Articles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Compte le nb total d\textquotesingle{}articles dans la base et le mets dans \$nbarticles
+
+\begin{DoxyReturn}{Returns}
+F\+E\+T\+C\+H\+\_\+\+A\+S\+S\+OC
+\end{DoxyReturn}
+retourne le Nb d\textquotesingle{}articles total 
+
+Definition at line 62 of file model.\+php.
+
+\mbox{\label{model_8php_af46dbd96c0a84886291cd15567c25939}} 
+\index{model.php@{model.php}!getTtArticles@{getTtArticles}}
+\index{getTtArticles@{getTtArticles}!model.php@{model.php}}
+\doxysubsubsection{getTtArticles()}
+{\footnotesize\ttfamily get\+Tt\+Articles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Recupère tout les articles
+
+O\+R\+D\+ER BY articles.\+id D\+E\+SC =$>$ tri D\+E\+SC orgarnisé en fonction des ids articles
+
+fetch\+All =$>$ resultat multiples
+
+\begin{DoxyReturn}{Returns}
+F\+E\+T\+C\+H\+\_\+\+A\+S\+S\+OC
+\end{DoxyReturn}
+retourne les articles 
+
+Definition at line 49 of file model.\+php.
+
+\mbox{\label{model_8php_aed089f48aeafebe96dc413b7a504a130}} 
+\index{model.php@{model.php}!insertCom@{insertCom}}
+\index{insertCom@{insertCom}!model.php@{model.php}}
+\doxysubsubsection{insertCom()}
+{\footnotesize\ttfamily insert\+Com (\begin{DoxyParamCaption}\item[{}]{\$pseudo,  }\item[{}]{\$commentaire,  }\item[{}]{\$article\+\_\+id }\end{DoxyParamCaption})}
+
+Insertion de commentaire
+
+quote-\/$>$ evite les erreurs par rapports au caractères spéciaux et les injections S\+QL
+
+date() — Formate une date/heure locale
+
+Insertion dans la table commentaires
+
+récupération de l\textquotesingle{}id du dernier commentaire
+
+insertion de la combinaison Id article et Id com dans la table article\+\_\+commentaire ~\newline
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$pseudo} & \\
+\hline
+string & {\em \$commentaire} & \\
+\hline
+int & {\em \$article\+\_\+id} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 162 of file model.\+php.
+
+\mbox{\label{model_8php_a4937b10774aabcf3955c48a81cacbaf2}} 
+\index{model.php@{model.php}!resizeImage@{resizeImage}}
+\index{resizeImage@{resizeImage}!model.php@{model.php}}
+\doxysubsubsection{resizeImage()}
+{\footnotesize\ttfamily resize\+Image (\begin{DoxyParamCaption}\item[{}]{\$width,  }\item[{}]{\$chemin\+Image }\end{DoxyParamCaption})}
+
+\char`\"{}\+R\+Edimensionne\char`\"{} une image
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$width} & \\
+\hline
+string & {\em \$chemin\+Image} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array [\$largeur,\$hauteur] 
+\end{DoxyReturn}
+
+
+Definition at line 196 of file model.\+php.
+
+\mbox{\label{model_8php_ad97491dd322cdc9d1087e092c87c1e9c}} 
+\index{model.php@{model.php}!setNewCategorie@{setNewCategorie}}
+\index{setNewCategorie@{setNewCategorie}!model.php@{model.php}}
+\doxysubsubsection{setNewCategorie()}
+{\footnotesize\ttfamily set\+New\+Categorie (\begin{DoxyParamCaption}\item[{}]{\$nom\+Categorie }\end{DoxyParamCaption})}
+
+Ajoute une nouvelle catégorie
+
+\$flag nous permet de vérifier si la catégorie existe déjà
+
+si \$flag est vide on fait requête S\+QL
+
+sinon message !
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$nom\+Categorie} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int
+\end{DoxyReturn}
+retourne l\textquotesingle{}id de la nouvelle catégorie 
+
+Definition at line 236 of file model.\+php.
+

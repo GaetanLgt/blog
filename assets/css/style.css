@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "Starjedi";
+  src: url("../font/SFDistantGalaxy.ttf");
+}
+@font-face {
+  font-family: "Simpson";
+  src: url("../font/Homer_Simpson_Revised.ttf");
+}
+@font-face {
+  font-family: "doctor";
+  src: url("../font/Doctor-Who.ttf");
+}
+@font-face {
+  font-family: "futurama";
+  src: url("../font/fr-title.ttf");
+}
+@font-face {
+  font-family: "Allstar";
+  src: url("../font/All-Star-Resort.ttf");
+}
+
+.index {
+  background-image: url('../img/936378.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 700px;
+}
+#cat {
+  background-color: aqua;
+  position: fixed;
+  width: 350px;
+  top: 20%;
+}
+#aut {
+  background-color:  hotpink;
+   position: fixed;
+   width: 350px;
+   top: 50%;
+}
+
+header, .fixed-top {
+ background-color: black;
+ color: white;
+}
+
+main {
+  padding-top: 65px;
+}
+
+#title a {
+ font-family: "Allstar";
+ color: white;
+}
+#article {
+  color: goldenrod;
+}
+
+.cat1, .aut1, .aut3  {
+  background-color: black;
+  color: white;
+  min-height: 700px;
+}
+
+.cat1 .border, .aut1 .border, .aut3 .border { 
+  border: 4px inset !important ;
+}
+
+.cat1 h1 ,.aut1 h1, .aut3 h1{
+  font-family: "Starjedi";
+}
+.cat1.border  {
+  background-color: black;
+  color: white;
+  border: 4px inset !important ;
+  min-height: 0;
+}
+
+.cat2, .aut2, .aut5 {
+  background-color: #FEDC0F;
+  color: #3F70D2;
+  font-family: "Simpson";
+  min-height: 700px;
+}
+.cat2 .border , .aut2 .border, .aut5 .border{
+  border-radius: 5%;
+  border: 4px dashed !important ;
+}
+
+.cat2.border  {
+  background-color: #FEDC0F;
+  color: #3F70D2;
+  border-radius: 5%;
+  border: 4px dashed !important ;
+  min-height: 0;
+}
+.cat3, .aut4 {
+  background-color: #25416B;
+  color:#BC832B; 
+  min-height: 700px;
+}
+
+.cat3 .border,.aut4 .border { 
+  border-radius: 20%;
+  border: 4px groove !important ;
+}
+
+.cat3 h1, .aut4 h1{
+  background-color: #25416B;
+  color:#BC832B; 
+  font-family: "doctor";
+  font-size: 300%;
+}
+
+.cat3.border  {
+  background-color: #25416B;
+  color:#BC832B; 
+  border-radius: 10%;
+  border: 4px groove !important ;
+  min-height: 0;
+}
+.cat4, .aut6 {
+  background-color:#A5C1D6;
+  color: #8B5C2E;
+  min-height: 700px;
+}
+
+.cat4 .border,.aut6 .border { 
+  border: 4px double !important ;
+}
+
+.cat4 h1,.aut6 h1{
+  background-color:#A5C1D6;
+  color: #8B5C2E;
+  font-family: "futurama";
+}
+.cat4.border  {
+  background-color:#A5C1D6;
+  color: #8B5C2E;
+  border: 4px double !important ;
+  min-height: 0;
+}
+
+ul {
+  list-style: none;
+  padding-right: 20px;
+}
+
+#cat h2, #aut h2{
+  font-family: "Allstar";
+  border-radius: 8%;
+}
+
+#cat, #aut, .bg-white {
+  border-radius: 5%;
+}
+
+#cat ul a{
+  color: hotpink;
+  font-weight: bolder ;
+  text-shadow: 2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, -2px 0 0 black, 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black, -2px -2px 0 black;
+}
+
+#aut ul a{
+  color: aqua;
+  font-weight: bolder ;
+  text-shadow: 2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, -2px 0 0 black, 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black, -2px -2px 0 black;
+}
+
+.aut1.border, .aut2.border, .aut3.border,.aut4.border,.aut5.border,.aut6.border  {
+  min-height: 0;
+}
+
+.btn-success {
+  background-color: #BC832B !important;
+  border: #BC832B !important;
+}
+
+a.border {
+  border-radius: 100%;
+  width: 30px !important;
+  height: 30px !important;
+}

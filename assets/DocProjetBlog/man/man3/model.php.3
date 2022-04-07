@@ -1,0 +1,271 @@
+.TH "model.php" 3 "Fri Jun 26 2020" "Version 1.1" "<Le blog des stars/>" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+model.php
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbddconnect\fP ()"
+.br
+.ti -1c
+.RI "\fBgetTtArticles\fP ()"
+.br
+.ti -1c
+.RI "\fBgetNbArticles\fP ()"
+.br
+.ti -1c
+.RI "\fBgetArticles\fP ($offet=0, $limit=10)"
+.br
+.ti -1c
+.RI "\fBgetAuteur\fP ()"
+.br
+.ti -1c
+.RI "\fBgetArticleAuteur\fP ($id)"
+.br
+.ti -1c
+.RI "\fBgetArticle\fP ($id)"
+.br
+.ti -1c
+.RI "\fBinsertCom\fP ($pseudo, $commentaire, $article_id)"
+.br
+.ti -1c
+.RI "\fBgetComments\fP ($article_id)"
+.br
+.ti -1c
+.RI "\fBresizeImage\fP ($width, $cheminImage)"
+.br
+.ti -1c
+.RI "\fBgetCategories\fP ()"
+.br
+.ti -1c
+.RI "\fBsetNewCategorie\fP ($nomCategorie)"
+.br
+.ti -1c
+.RI "\fBgetArticleCategorie\fP ($id)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bddconnect ()"
+Bdd Connexion
+.PP
+connexion à la base mySQL
+.PP
+mysql:host=nom de l'hote;dbname=nom de la base ','username', 'mdp'
+.PP
+Retourne une erreur en cas de problème
+.PP
+\fBReturns\fP
+.RS 4
+\\PDO 
+.RE
+.PP
+
+.PP
+Definition at line 27 of file model\&.php\&.
+.SS "getArticle ( $id)"
+Retourne un article en fonction de l'id envoyé
+.PP
+\fBParameters\fP
+.RS 4
+\fI$id\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+FETCH_ASSOC
+.RE
+.PP
+retourne UN article 
+.PP
+Definition at line 137 of file model\&.php\&.
+.SS "getArticleAuteur ( $id)"
+Récupère tous les articles d'un auteur avec tri
+.PP
+$articles[0]['nom'] => tableau a double entrée
+.PP
+retourne les articles si il y en a par rapport a l'id auteur
+.PP
+sinon message pour dire qu'il n'y a rien
+.PP
+\fBReturns\fP
+.RS 4
+FETCH_ASSOC
+.RE
+.PP
+retourne les articles de l'auteur 
+.PP
+Definition at line 116 of file model\&.php\&.
+.SS "getArticleCategorie ( $id)"
+Renvoi les articles qui peuplent une categorie donc l'id est mis en paramètre
+.PP
+\fBParameters\fP
+.RS 4
+\fI$id\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+FETCH_ASSOC
+.RE
+.PP
+retourne les articles 
+.PP
+Definition at line 265 of file model\&.php\&.
+.SS "getArticles ( $offet = \fC0\fP,  $limit = \fC10\fP)"
+donne les $limit articles après $offet ingnorés
+.PP
+si pas d'envoi de offset en paramètre alors $offset = 0
+.PP
+si pas d'envoi de lmite en paramètre alors $limit = 10
+.PP
+ORDER BY articles\&.id DESC tri en descendant par id
+.PP
+LIMIT $offet, $limit => Limite les résultats à $limit résultat et saute les $offets premiers résultats (--Query--)
+.PP
+\fBReturns\fP
+.RS 4
+FETCH_ASSOC
+.RE
+.PP
+retourne les articles 
+.PP
+Definition at line 83 of file model\&.php\&.
+.SS "getAuteur ()"
+récupère les informations de tous les auteurs
+.PP
+\fBReturns\fP
+.RS 4
+FETCH_ASSOC
+.RE
+.PP
+retourne les auteurs 
+.PP
+Definition at line 97 of file model\&.php\&.
+.SS "getCategories ()"
+Récupère toutes les informations de notre table categories en base SQL
+.PP
+\fBReturns\fP
+.RS 4
+FETCH_ASSOC
+.RE
+.PP
+retourne les catégories 
+.PP
+Definition at line 215 of file model\&.php\&.
+.SS "getComments ( $article_id)"
+Récupère les commentaires pour les afficher en fonction de l'id article
+.PP
+\fBParameters\fP
+.RS 4
+\fI$article_id\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+FETCH_ASSOC
+.RE
+.PP
+retourne les commentaires 
+.PP
+Definition at line 181 of file model\&.php\&.
+.SS "getNbArticles ()"
+Compte le nb total d'articles dans la base et le mets dans $nbarticles
+.PP
+\fBReturns\fP
+.RS 4
+FETCH_ASSOC
+.RE
+.PP
+retourne le Nb d'articles total 
+.PP
+Definition at line 62 of file model\&.php\&.
+.SS "getTtArticles ()"
+Recupère tout les articles
+.PP
+ORDER BY articles\&.id DESC => tri DESC orgarnisé en fonction des ids articles
+.PP
+fetchAll => resultat multiples
+.PP
+\fBReturns\fP
+.RS 4
+FETCH_ASSOC
+.RE
+.PP
+retourne les articles 
+.PP
+Definition at line 49 of file model\&.php\&.
+.SS "insertCom ( $pseudo,  $commentaire,  $article_id)"
+Insertion de commentaire
+.PP
+quote-> evite les erreurs par rapports au caractères spéciaux et les injections SQL
+.PP
+date() — Formate une date/heure locale
+.PP
+Insertion dans la table commentaires
+.PP
+récupération de l'id du dernier commentaire
+.PP
+insertion de la combinaison Id article et Id com dans la table article_commentaire 
+.br
+.PP
+\fBParameters\fP
+.RS 4
+\fI$pseudo\fP 
+.br
+\fI$commentaire\fP 
+.br
+\fI$article_id\fP 
+.RE
+.PP
+
+.PP
+Definition at line 162 of file model\&.php\&.
+.SS "resizeImage ( $width,  $cheminImage)"
+'REdimensionne' une image
+.PP
+\fBParameters\fP
+.RS 4
+\fI$width\fP 
+.br
+\fI$cheminImage\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+array [$largeur,$hauteur] 
+.RE
+.PP
+
+.PP
+Definition at line 196 of file model\&.php\&.
+.SS "setNewCategorie ( $nomCategorie)"
+Ajoute une nouvelle catégorie
+.PP
+$flag nous permet de vérifier si la catégorie existe déjà
+.PP
+si $flag est vide on fait requête SQL
+.PP
+sinon message !
+.PP
+\fBParameters\fP
+.RS 4
+\fI$nomCategorie\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int
+.RE
+.PP
+retourne l'id de la nouvelle catégorie 
+.PP
+Definition at line 236 of file model\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for <Le blog des stars/> from the source code\&.
